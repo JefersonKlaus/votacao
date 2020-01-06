@@ -1,0 +1,80 @@
+<div class="container">
+  <ng-container *ngIf="userCanVote; else userCantVoteLabel">
+    <div class="row text-center margin-top-bottom">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            Vote em qual restaurante deseja almoçar hoje!
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            Votação se encerra ao meio dia.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <ng-container *ngFor="let option of options">
+        <div class="col-md-3">
+          <mat-card (click)="optionSelected=option.id">
+            <mat-card-title class="mat-title no-margin"
+                            [ngClass]="{'selected-color' : optionSelected===option.id}">
+              {{ option.name }}
+            </mat-card-title>
+
+            <mat-card-subtitle class="mat-small no-margin"
+                               [ngClass]="{'selected-color' : optionSelected===option.id}">
+              {{ option.city }}
+            </mat-card-subtitle>
+          </mat-card>
+
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="row" *ngIf="!hideButton">
+      <div class="col-auto">
+        <button mat-raised-button
+                (click)="authService.logout()">
+          SAIR
+        </button>
+      </div>
+
+      <div class="col-auto ml-auto">
+        <button mat-raised-button color="primary"
+                [disabled]="optionSelected===null"
+                (click)="saveVote()">
+          CONFIRMAR
+        </button>
+      </div>
+    </div>
+
+  </ng-container>
+
+  <ng-template #userCantVoteLabel>
+    <div class="row text-center margin-top-bottom">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            OPS.... VOCÊ JA VOTOU HOJE! 🤪
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <div class="col-auto">
+              <button mat-raised-button
+                      (click)="authService.logout()">
+                SAIR
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+</div>
+

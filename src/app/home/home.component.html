@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row margin-top-bottom">
+    <div class="col text-center mat-h1">
+      Bem vindo ao VotaAí!
+    </div>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()" novalidate>
+    <div class="row justify-content-md-center">
+      <div class="col-auto">
+        <mat-form-field appearance="outline" id="employee-code">
+          <mat-label>Código de funcionário</mat-label>
+          <input matInput formControlName="employeeCode"
+                 [autofocus]="true">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div class="col-auto margin-vertical-auto">
+        <button mat-raised-button color="accent"
+                routerLink="/voting" [disabled]="loginForm.invalid">
+          VOTAR!
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col">
+      RESULTADO PRÉVIO:
+    </div>
+  </div>
+  <div class="row" *ngFor="let item of previousResult">
+    <div class="col">
+      <strong>{{ item.name }}</strong> {{ item.number }} votos
+    </div>
+  </div>
+</div>

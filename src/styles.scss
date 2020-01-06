@@ -1,0 +1,27 @@
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #303030;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.container {
+  padding-bottom: 8px;
+}
+
+.margin-vertical-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;;
+}
+
+.margin-top-bottom {
+  margin: 16px 0 16px 0;
+}

@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+
+mat-card {
+  margin: 8px;
+
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.selected-color {
+  color: mat-color(mat-palette($mat-green, 500));;
+}
+
+
