@@ -2,7 +2,9 @@
 
 Projeto criado com  [Angular CLI](https://github.com/angular/angular-cli) versao 8.0.1. <br/>
 Utilizado [Angular material](https://material.angular.io/) versao 8.2.3 <br/>
-Todos dados sao FAKE, neste caso, pode ser usado qualdo codigo de funcionario na home.
+Todos dados sao FAKE, neste caso, pode ser usado qualquer codigo de funcionario na home.
+
+Objetivo deste projeto é apenas testes e estudos.
 
 ## Rodar projeto
 
@@ -21,6 +23,3 @@ Execute `ng test` para rodar testes unitarios [Karma](https://karma-runner.githu
 * Implementar o backend (GraphQl) utilizando o framework [Serverless Framework](https://serverless.com/);
 * Implementar controle de usuarios (Cognito);
 
-## Obs
-
-Não pude dispor de muito tempo para o desenvolvimento, neste caso o projeto ainda esta incompleto.
